@@ -8,8 +8,7 @@ defaults:
   - trainer: debug_gpu
 
 data:
-  name: "CIFAR10"
-  root: "data/"
+  size: 100
   loader_params:
     batch_size: 32
     num_workers: 4
@@ -21,7 +20,7 @@ checkpoint:
   filename: "{epoch:03d}-{val_acc:.3f}"
   save_last: True
   verbose: True
-  save_top_k: null
+  save_top_k: 1
 
 hydra:
   run:
